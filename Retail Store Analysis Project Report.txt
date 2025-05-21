@@ -1,0 +1,69 @@
+STORE ANALYSIS IN EXCEL: 
+
+- Downloaded the store data for cleaning, processing, analysis, data visualization, and creating insights in Microsoft Excel.
+
+OBJECTIVE:
+A store wants to create an annual sales report for a year, so that they can understand their customers and grow more sales in the consecutive year.
+
+
+PROBLEM STATEMENTS:
+1. compare the sales and orders using single chart
+2. which month got the highest sales and orders?
+3. who purchased more--men or women?
+4. what are different order status in the year?
+5. list top 5 states contributing to the sales?
+6. relation between age and gender based on number of orders
+7. which channel is contributing to maximum sales?
+8. highest selling category? 
+
+Data Cleaning:
+-check all the columns if there's any null values.
+-check all numerical data have numeric values	
+- correct the name of column 'AMenount' to 'Amount'	
+-replace W, M with women and men in Genders: ctrl+F--replace--replace all
+(**repeat for any other columns with same errors)
+-replace one, two with 1, 2
+-since in state and city columns we can't check spelling of each entry, just make sure there's no null value
+
+
+DATA PROCESSING:
+To establish a connection/relation between different attributes, which can help in further analysis is data processing.
+-create an age group to categorize age into 3 groups: 
+    =IF(E2>=50, "Senior", IF(E2>=19, "Adult", "Teenager"))
+    this will categorize age into Senior, Adult, and teenager
+-will add a month column to solve problem statements related to month
+    =TEXT(G2, "mmm")
+**columns created are highlighted for our reference
+
+
+DATA ANALYSIS:
+-open Pivot Table, select 'new worksheet' option, and click ok.
+-a new worksheet will open with PivotTable Fields on right, having filters, rows, columns, and values.
+
+Problem statement 1.:
+compare the sales and orders using single chart
+   -use values like sum of amount (as sales), count of orderID (as orders) (put in columns), sort by month (put in rows)
+   -turn off Grand Total for rows and column in PivotTable settings
+   -select the data in pivot table and choose Combo chart in Pivot Chart option. Show secondary axis to represent count of order IDs.
+   -Format the chart as per your requirements and copy-paste the chart on a fresh worksheet 'Report', and do the basic formatting.
+(***Repeat the similar process for remaining problem statements as per the requirements.)
+
+Once all the charts are pasted and formatted onto the Report sheet, insert slicers for Month, Channel, and Category. 
+Right click on the slicers to 'Report connections' and check all the sheets to the slicer. Repeat for all the remaining slicers.
+(**slicers act as filters for data and their respective graphical representation.)
+
+
+INSIGHTS:
+-March has the highest amount of sales.
+-Women are ore likely to buy compared to men (i.e., 64%).
+-Maharashtra, karnatka, and Uttar Pradesh are the top 3 states with no. of sales.
+-Adult women age group (19-49 years) is max contributing (54%).
+-Amazon, Flipkart and Myntra channels are max contributing (80%).
+-Most of the orders are getting delivered, which is a good sign (92%).
+-The highest selling category of clothing is 'Set'.
+
+
+CONCLUSION:
+To improve sales, target women customers of age group 'Adult' living in Maharashtra, Karnataka, and Uttar Pradesh by showing ads/offers/coupons available on Amazon, Flipkart, and Myntra.
+
+[Note: The above report can be refreshed and presented on a weekly, monthy, or yearly basis, as per client's need.]
